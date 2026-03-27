@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Главная страница - наивысший приоритет -->
+    <url>
+        <loc>https://cs2skin.ru/index.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Маркет (каталог) -->
+    <url>
+        <loc>https://cs2skin.ru/market.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Страница статьи блога -->
+    <url>
+        <loc>https://cs2skin.ru/blog-article.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Торговая площадка -->
+    <url>
+        <loc>https://cs2skin.ru/trade.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Поддержка -->
+    <url>
+        <loc>https://cs2skin.ru/support.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Контакты -->
+    <url>
+        <loc>https://cs2skin.ru/contacts.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- FAQ -->
+    <url>
+        <loc>https://cs2skin.ru/faq.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Политика конфиденциальности -->
+    <url>
+        <loc>https://cs2skin.ru/privacy.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Условия использования -->
+    <url>
+        <loc>https://cs2skin.ru/terms.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Публичная оферта -->
+    <url>
+        <loc>https://cs2skin.ru/offer.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+</urlset>

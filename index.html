@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- Основные мета-теги -->
+    <title>CS2 Skin Shop | Купить скины CS2 | Ножи, перчатки, винтовки</title>
+    <meta name="description" content="Лучший магазин скинов CS2. Покупайте ножи, перчатки, винтовки и пистолеты по выгодным ценам. Мгновенная выдача, безопасные сделки. Более 1000 товаров в наличии.">
+    <meta name="keywords" content="CS2, скины CS2, купить скины CS2, ножи CS2, перчатки CS2, AWP Dragon Lore, магазин скинов">
+    <meta name="author" content="CS2 Skin Shop">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Снимок экрана 2026-03-05 221715.png">
+    <link rel="shortcut icon" href="Снимок экрана 2026-03-05 221715.png" type="image/x-icon">
+    
+    <!-- Микроразметка LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "CS2 Skin Shop",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Арбат, 69",
+            "addressLocality": "Москва",
+            "postalCode": "119002",
+            "addressCountry": "RU"
+        },
+        "telephone": "+7-800-555-35-35",
+        "email": "myau@cs2skin.ru",
+        "openingHours": "Mo-Su 04:00-00:00",
+        "priceRange": "100-5000000 RUB",
+        "image": "https://cs2skin.ru/logo.png",
+        "url": "https://cs2skin.ru/",
+        "sameAs": [
+            "https://t.me/anyutkys69",
+            "https://www.twitch.tv/anyutkys"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* ===== СБРОС СТИЛЕЙ И ПЕРЕМЕННЫЕ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            background-color: #0F0F17;
+            color: #FFFFFF;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        /* ===== ХЕДЕР ===== */
+        header {
+            background-color: rgba(30, 30, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(74, 226, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: block;
+            text-decoration: none;
+            min-height: 44px;
+            min-width: 44px;
+            z-index: 1001;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: auto;
+            border-radius: 12px;
+            background-color: #1E1E2E;
+            padding: 5px;
+            border: 1px solid rgba(74, 226, 255, 0.3);
+        }
+
+        /* Бургер-меню */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid #4AE2FF;
+            border-radius: 8px;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #4AE2FF;
+            margin: 6px auto;
+            transition: all 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -8px);
+        }
+
+        /* Навигация */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item > a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+            font-weight: 500;
+            min-height: 44px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-item > a:hover,
+        .nav-item > a.active {
+            color: #4AE2FF;
+            background-color: rgba(74, 226, 255, 0.1);
+        }
+
+        /* Выпадающие списки */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1E1E2E;
+            min-width: 240px;
+            border-radius: 12px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            border: 1px solid #4AE2FF;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            min-height: 48px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #4AE2FF;
+            color: #0F0F17;
+        }
+
+        /* Правая часть */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-box {
+            display: flex;
+            background-color: #1E1E2E;
+            border-radius: 30px;
+            border: 1px solid #3A3A4A;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 12px 16px;
+            color: #FFFFFF;
+            width: 200px;
+            font-size: 16px;
+            min-height: 44px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            padding: 12px 16px;
+            color: #FFFFFF;
+            cursor: pointer;
+            min-width: 48px;
+            min-height: 48px;
+            font-size: 18px;
+        }
+
+        .profile-btn {
+            background: transparent;
+            border: 1px solid #4AE2FF;
+            color: #4AE2FF;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            min-height: 48px;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .profile-btn:hover {
+            background-color: #4AE2FF;
+            color: #0F0F17;
+        }
+
+        .profile-dropdown {
+            position: relative;
+        }
+
+        .profile-dropdown .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        /* ===== МЕДИА-ЗАПРОСЫ ===== */
+        
+        @media (max-width: 1024px) {
+            .nav-item > a {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+            .search-box input {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: #1E1E2E;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
+                padding: 80px 20px 20px;
+                transition: left 0.3s ease;
+                margin-left: 0;
+                overflow-y: auto;
+            }
+            
+            .main-nav.active {
+                left: 0;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+            
+            .nav-item {
+                width: 100%;
+            }
+            
+            .nav-item > a {
+                padding: 16px;
+                font-size: 16px;
+                border-bottom: 1px solid rgba(74, 226, 255, 0.1);
+                white-space: normal;
+                position: relative;
+            }
+            
+            .nav-item.dropdown > a::after {
+                content: '▼';
+                font-size: 12px;
+                margin-left: 8px;
+                color: #4AE2FF;
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                width: 100%;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                background-color: #2A2A3A;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .nav-item.active .dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-menu a {
+                padding: 16px 32px;
+                border-bottom: 1px solid rgba(74, 226, 255, 0.1);
+            }
+            
+            .nav-actions {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+            
+            .profile-dropdown {
+                width: 100%;
+            }
+            
+            .profile-btn {
+                width: 100%;
+                text-align: left;
+                position: relative;
+            }
+            
+            .profile-btn::after {
+                content: '▼';
+                font-size: 12px;
+                color: #4AE2FF;
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .profile-dropdown.active .dropdown-menu {
+                display: block;
+                position: static;
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .btn {
+                width: 100%;
+            }
+            .form-group {
+                flex-direction: column;
+            }
+            .form-group input,
+            .form-group button {
+                width: 100%;
+            }
+        }
+
+        /* Touch-оптимизация */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-item > a,
+            .dropdown-menu a,
+            .btn,
+            .footer-btn,
+            .social-link {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(74, 226, 255, 0.2);
+            }
+            
+            .nav-item > a:active,
+            .btn:active {
+                background-color: #4AE2FF;
+                color: #0F0F17;
+            }
+        }
+
+        /* ===== КОНТЕНТ ===== */
+        .hero {
+            background: linear-gradient(135deg, #1E1E2E 0%, #2A2A3A 100%);
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            border: 1px solid #4AE2FF;
+            box-shadow: 0 10px 30px rgba(74, 226, 255, 0.1);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #4AE2FF;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #A0A0B0;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4AE2FF;
+            color: #0F0F17;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            min-height: 52px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #FFFFFF;
+            box-shadow: 0 0 20px #4AE2FF;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 32px;
+            color: #FFFFFF;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background-color: #4AE2FF;
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background-color: #1E1E2E;
+            border-radius: 20px;
+            padding: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(74, 226, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #4AE2FF;
+            box-shadow: 0 10px 25px rgba(74, 226, 255, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #2C2C3A, #1A1A28);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            display: block;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #A0A0B0;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .price {
+            color: #4AE2FF;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .feedback {
+            background-color: #1E1E2E;
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid rgba(74, 226, 255, 0.3);
+            margin: 40px 0;
+        }
+
+        .feedback h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .feedback p {
+            color: #A0A0B0;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 12px;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 16px 20px;
+            border-radius: 40px;
+            border: 1px solid #3A3A4A;
+            background-color: #0F0F17;
+            color: #FFFFFF;
+            font-size: 16px;
+            min-height: 52px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4AE2FF;
+        }
+
+        .form-group button {
+            background-color: #4AE2FF;
+            color: #0F0F17;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+            min-height: 52px;
+        }
+
+        .form-group button:hover {
+            background-color: #FFFFFF;
+        }
+
+        /* Страница товара */
+        .product-page {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #1A1A28;
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid #4AE2FF;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-gallery picture,
+        .product-gallery img {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid #4AE2FF;
+        }
+
+        .product-info h2 {
+            font-size: 32px;
+            color: #4AE2FF;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4AE2FF;
+            margin: 20px 0;
+        }
+
+        .product-availability {
+            color: #4AE2FF;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .product-rating {
+            background-color: #0F0F17;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .rating-stars {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        .review {
+            background-color: #0F0F17;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .review-author {
+            color: #4AE2FF;
+            font-weight: 600;
+        }
+
+        .review-text {
+            color: #A0A0B0;
+            margin: 5px 0;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #1A1A28;
+            padding: 60px 0 20px;
+            border-top: 1px solid #4AE2FF;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #4AE2FF;
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #4AE2FF;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #A0A0B0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-col a:hover {
+            color: #4AE2FF;
+        }
+
+        .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-btn {
+            background-color: transparent;
+            border: 1px solid #4AE2FF;
+            color: #4AE2FF;
+            padding: 14px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+            font-size: 14px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-btn:hover {
+            background-color: #4AE2FF;
+            color: #0F0F17;
+            transform: translateY(-2px);
+        }
+
+        .footer-btn.primary {
+            background-color: #4AE2FF;
+            color: #0F0F17;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            font-size: 14px;
+            background-color: #2A2A3A;
+            padding: 12px 18px;
+            border-radius: 30px;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            min-height: 48px;
+        }
+
+        .social-link:hover {
+            background-color: #4AE2FF;
+            color: #0F0F17;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            background-color: #2A2A3A;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #FFFFFF;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #606070;
+            font-size: 14px;
+            border-top: 1px solid #2A2A3A;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        /* Адаптация сетки */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <img src="Снимок экрана 2026-03-05 221715.png" 
+                         alt="CS2 Skin Shop - Логотип" 
+                         class="logo-image"
+                         width="50"
+                         height="50">
+                </a>
+                
+                <button class="menu-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="main-nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item dropdown">
+                            <a href="market.html">Маркет</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="market.html?category=all">Все скины</a></li>
+                                <li><a href="market.html?category=knife">Ножи</a></li>
+                                <li><a href="market.html?category=gloves">Перчатки</a></li>
+                                <li><a href="market.html?category=rifle">Винтовки</a></li>
+                                <li><a href="market.html?category=pistol">Пистолеты</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a href="trade.html">Торговая площадка</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="sell.html">Продать скин</a></li>
+                                <li><a href="market.html">Купить скин</a></li>
+                                <li><a href="exchange.html">Обменять</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="blog-article.html" class="active">Новости CS2</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a href="support.html">Поддержка</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="contacts.html">Контакты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <div class="search-box">
+                            <input type="text" placeholder="Поиск скинов...">
+                            <button aria-label="Поиск">🔍</button>
+                        </div>
+                        
+                        <div class="profile-dropdown">
+                            <button class="profile-btn">👤 Кабинет</button>
+                            <ul class="dropdown-menu">
+                                <li><a href="inventory.html">Мой инвентарь</a></li>
+                                <li><a href="login.html">Войти</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>CS2 <span>SKINS</span> MARKET</h1>
+                    <p>Покупай, продавай и обменивай скины CS2 по лучшим ценам с мгновенной выдачей.</p>
+                    <a href="market.html" class="btn">Перейти в каталог</a>
+                </div>
+            </section>
+
+            <h2 class="section-title">Популярные категории</h2>
+            
+            <div class="card-grid" itemscope itemtype="https://schema.org/ItemList">
+                <meta itemprop="name" content="Популярные категории скинов CS2">
+                <meta itemprop="numberOfItems" content="3">
+                
+                <!-- ===== КАРТОЧКА 1: НОЖИ (с адаптивным picture) ===== -->
+                <div class="card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="1">
+                    <div itemprop="item" itemscope itemtype="https://schema.org/Product">
+                        <div class="card-image">
+                            <picture>
+                                <!-- WebP для десктопа (512px) -->
+                                <source type="image/webp" 
+                                        srcset="https://images.steamusercontent.com/ugc/938320481076992153/30C76E5780E6805EE354F8844B65A154ACA2AF62/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true&format=webp"
+                                        media="(min-width: 768px)">
+                                <!-- WebP для мобильных (320px) -->
+                                <source type="image/webp" 
+                                        srcset="https://images.steamusercontent.com/ugc/938320481076992153/30C76E5780E6805EE354F8844B65A154ACA2AF62/?imw=320&imh=180&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true&format=webp"
+                                        media="(max-width: 767px)">
+                                <!-- JPG для десктопа (512px) - запасной вариант -->
+                                <source srcset="https://images.steamusercontent.com/ugc/938320481076992153/30C76E5780E6805EE354F8844B65A154ACA2AF62/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                                        media="(min-width: 768px)">
+                                <!-- JPG для мобильных (320px) - запасной вариант -->
+                                <source srcset="https://images.steamusercontent.com/ugc/938320481076992153/30C76E5780E6805EE354F8844B65A154ACA2AF62/?imw=320&imh=180&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                                        media="(max-width: 767px)">
+                                <!-- Финальный запасной вариант -->
+                                <img src="https://images.steamusercontent.com/ugc/938320481076992153/30C76E5780E6805EE354F8844B65A154ACA2AF62/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" 
+                                     alt="Коллекционные ножи для CS2"
+                                     itemprop="image"
+                                     loading="lazy"
+                                     width="512"
+                                     height="288">
+                            </picture>
+                        </div>
+                        <h3 itemprop="name">Ножи</h3>
+                        <p itemprop="description">Лучшие ножи для коллекционеров</p>
+                        <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="RUB">
+                            <span itemprop="price">5000</span> ₽
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ===== КАРТОЧКА 2: ПЕРЧАТКИ (с адаптивным picture) ===== -->
+                <div class="card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="2">
+                    <div itemprop="item" itemscope itemtype="https://schema.org/Product">
+                        <div class="card-image">
+                            <picture>
+                                <!-- WebP для десктопа (512px) -->
+                                <source type="image/webp" 
+                                        srcset="https://images.steamusercontent.com/ugc/911295124775607266/E76952A20FB33D6CD241E5FCD717511C09E11C5B/?imw=512&imh=306&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true&format=webp"
+                                        media="(min-width: 768px)">
+                                <!-- WebP для мобильных (320px) -->
+                                <source type="image/webp" 
+                                        srcset="https://images.steamusercontent.com/ugc/911295124775607266/E76952A20FB33D6CD241E5FCD717511C09E11C5B/?imw=320&imh=191&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true&format=webp"
+                                        media="(max-width: 767px)">
+                                <!-- JPG для десктопа (512px) -->
+                                <source srcset="https://images.steamusercontent.com/ugc/911295124775607266/E76952A20FB33D6CD241E5FCD717511C09E11C5B/?imw=512&imh=306&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                                        media="(min-width: 768px)">
+                                <!-- JPG для мобильных (320px) -->
+                                <source srcset="https://images.steamusercontent.com/ugc/911295124775607266/E76952A20FB33D6CD241E5FCD717511C09E11C5B/?imw=320&imh=191&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                                        media="(max-width: 767px)">
+                                <!-- Финальный запасной вариант -->
+                                <img src="https://images.steamusercontent.com/ugc/911295124775607266/E76952A20FB33D6CD241E5FCD717511C09E11C5B/?imw=512&imh=306&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" 
+                                     alt="Элитные перчатки для CS2"
+                                     itemprop="image"
+                                     loading="lazy"
+                                     width="512"
+                                     height="306">
+                            </picture>
+                        </div>
+                        <h3 itemprop="name">Перчатки</h3>
+                        <p itemprop="description">Элитные перчатки для профи</p>
+                        <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="RUB">
+                            <span itemprop="price">12000</span> ₽
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ===== КАРТОЧКА 3: ВИНТОВКИ (с адаптивным picture) ===== -->
+                <div class="card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="3">
+                    <div itemprop="item" itemscope itemtype="https://schema.org/Product">
+                        <div class="card-image">
+                            <picture>
+                                <!-- WebP для десктопа -->
+                                <source type="image/webp" 
+                                        srcset="https://cs17.pikabu.ru/s/2026/01/24/13/mvwvlrwo.jpg?format=webp"
+                                        media="(min-width: 768px)">
+                                <!-- WebP для мобильных (320px) -->
+                                <source type="image/webp" 
+                                        srcset="https://cs17.pikabu.ru/s/2026/01/24/13/mvwvlrwo.jpg?w=320&format=webp"
+                                        media="(max-width: 767px)">
+                                <!-- JPG для десктопа -->
+                                <source srcset="https://cs17.pikabu.ru/s/2026/01/24/13/mvwvlrwo.jpg"
+                                        media="(min-width: 768px)">
+                                <!-- JPG для мобильных (320px) -->
+                                 <source srcset="https://cs17.pikabu.ru/s/2026/01/24/13/mvwvlrwo.jpg?w=320"
+                                        media="(max-width: 767px)">
+                                <!-- Финальный запасной вариант -->
+                                <img src="https://cs17.pikabu.ru/s/2026/01/24/13/mvwvlrwo.jpg" 
+                                     alt="Винтовки CS2"
+                                     itemprop="image"
+                                     loading="lazy"
+                                     width="512"
+                                     height="288">
+                            </picture>
+                        </div>
+                        <h3 itemprop="name">Винтовки</h3>
+                        <p itemprop="description">AWP, M4 и другие легенды</p>
+                        <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="RUB">
+                            <span itemprop="price">1500</span> ₽
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="feedback">
+                <h2>Будь в курсе новинок</h2>
+                <p>Подпишитесь на рассылку, чтобы первыми узнавать о поступлении редких скинов.</p>
+                <form class="form-group" action="#" method="POST">
+                    <label for="email-input" class="visually-hidden">Email для подписки</label>
+                    <input type="email" id="email-input" placeholder="Твой email" required>
+                    <button type="submit">Подписаться</button>
+                </form>
+            </section>
+
+            <h2 class="section-title" style="margin-top: 60px;">🔥 Карточка топ-товара</h2>
+            
+            <!-- Микроразметка Product -->
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": "AWP | Dragon Lore (Minimal Wear)",
+                "description": "Легендарный скин AWP с изображением дракона. Состояние: Minimal Wear. Один из самых редких и дорогих скинов в CS2.",
+                "image": "https://assets.lis-skins.com/market_images/11591_b.png",
+                "sku": "AWP-DL-001",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "CS2"
+                },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "price": "1500000",
+                        "priceCurrency": "RUB",
+                        "availability": "https://schema.org/InStock",
+                        "itemCondition": "https://schema.org/UsedCondition",
+                        "url": "https://cs2skin.ru/product/awp-dragon-lore"
+                    }
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "127",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "s1mple_fan"
+                        },
+                        "datePublished": "2025-09-20",
+                        "reviewBody": "Скин просто космос! Качество Minimal Wear реально как новое. Выдача мгновенная, спасибо магазину.",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        }
+                    },
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "collector_88"
+                        },
+                        "datePublished": "2025-09-18",
+                        "reviewBody": "Долго искал этот Dragon Lore в хорошем состоянии. Тут оказался лучший вариант по цене. Рекомендую.",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        }
+                    }
+                ]
+            }
+            </script>
+            
+            <!-- ===== ТОП-ТОВАР с адаптивным picture ===== -->
+            <div class="product-page">
+                <div class="product-grid">
+                    <div class="product-gallery">
+                        <picture>
+                            <!-- WebP для десктопа -->
+                            <source type="image/webp" 
+                                    srcset="https://assets.lis-skins.com/market_images/11591_b.png?format=webp"
+                                    media="(min-width: 768px)">
+                            <!-- WebP для мобильных (320px) -->
+                            <source type="image/webp" 
+                                    srcset="https://assets.lis-skins.com/market_images/11591_b.png?w=320&format=webp"
+                                    media="(max-width: 767px)">
+                            <!-- JPG для десктопа -->
+                            <source srcset="https://assets.lis-skins.com/market_images/11591_b.png"
+                                    media="(min-width: 768px)">
+                            <!-- JPG для мобильных (320px) -->
+                            <source srcset="https://assets.lis-skins.com/market_images/11591_b.png?w=320"
+                                    media="(max-width: 767px)">
+                            <!-- Финальный запасной вариант -->
+                            <img src="https://assets.lis-skins.com/market_images/11591_b.png" 
+                                 alt="AWP Dragon Lore Minimal Wear"
+                                 loading="lazy"
+                                 width="600"
+                                 height="450">
+                        </picture>
+                    </div>
+                    <div class="product-info">
+                        <h2>AWP | Dragon Lore (Minimal Wear)</h2>
+                        <p class="product-availability">✅ В наличии (1 шт.)</p>
+                        <div class="product-price">1 500 000 ₽</div>
+                        
+                        <div class="product-rating">
+                            <div class="rating-stars">★★★★★ 4.9 (127 отзывов)</div>
+                            
+                            <div class="review">
+                                <div class="review-author">s1mple_fan</div>
+                                <div class="review-text">Скин просто космос! Качество Minimal Wear реально как новое. Выдача мгновенная, спасибо магазину.</div>
+                                <div class="rating-stars">★★★★★</div>
+                            </div>
+                            
+                            <div class="review">
+                                <div class="review-author">collector_88</div>
+                                <div class="review-text">Долго искал этот Dragon Lore в хорошем состоянии. Тут оказался лучший вариант по цене. Рекомендую.</div>
+                                <div class="rating-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        
+                        <p>Описание: Легендарный скин AWP с изображением дракона. Состояние: Minimal Wear. Один из самых редких и дорогих скинов в CS2.</p>
+                        
+                        <a href="#" class="btn" style="margin-top: 20px;">Купить сейчас</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" id="contact-info" itemscope itemtype="https://schema.org/ContactPoint">
+                    <h4>Контакты</h4>
+                    <p><span itemprop="email">✉️ myau@cs2skin.ru</span></p>
+                    <p><span itemprop="telephone">📞 8 (800) 555-35-35</span></p>
+                    <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <span itemprop="addressLocality">📍 Москва</span>, <span itemprop="streetAddress">ул. Арбат, 69</span>
+                    </p>
+                    <p>🕐 <time itemprop="openingHours" datetime="04:00-00:00">04:00 - 00:00</time></p>
+                    
+                    <div class="payment-methods">
+                        <span class="payment-method">Visa</span>
+                        <span class="payment-method">MasterCard</span>
+                        <span class="payment-method">МИР</span>
+                        <span class="payment-method">Qiwi</span>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Быстрые ссылки</h4>
+                    <a href="market.html">📦 Маркет</a>
+                    <a href="trade.html">🔄 Торговая площадка</a>
+                    <a href="sell.html">💰 Продать скин</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <a href="about.html">ℹ️ О нас</a>
+                    <a href="faq.html">❓ FAQ</a>
+                    <a href="blog.html">📰 Блог</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Действия</h4>
+                    <div class="footer-buttons">
+                        <a href="login.html" class="footer-btn primary">🔑 Войти</a>
+                        <a href="register.html" class="footer-btn">📝 Регистрация</a>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://t.me/anyutkys69" target="_blank" class="social-link">📱 Telegram</a>
+                        <a href="https://www.twitch.tv/anyutkys" target="_blank" class="social-link">📺 Twitch</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                Все права защищены. CS2 Skin Shop
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+            const profileBtn = document.querySelector('.profile-btn');
+            const profileDropdown = document.querySelector('.profile-dropdown');
+            
+            // Бургер-меню
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+            
+            // Выпадающие списки на мобильных
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('a');
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+                
+                if (profileBtn && profileDropdown) {
+                    profileBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        profileDropdown.classList.toggle('active');
+                    });
+                }
+            }
+            
+            // Закрытие меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        menuToggle.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Сброс при изменении размера
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mainNav.classList.remove('active');
+                    if (menuToggle) menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                    
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                    if (profileDropdown) profileDropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

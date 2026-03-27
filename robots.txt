@@ -1,0 +1,36 @@
+# robots.txt для CS2 Skin Shop
+# Разрешаем всем поисковым роботам сканирование
+
+User-agent: *
+Allow: /
+
+# Запрещаем сканирование служебных директорий
+Disallow: /admin/
+Disallow: /backup/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /private/
+
+# Запрещаем сканирование системных файлов
+Disallow: /*.log$
+Disallow: /*.ini$
+Disallow: /*.sql$
+
+# Ограничиваем сканирование дублирующихся страниц
+Disallow: /*?*
+Disallow: /print/*
+
+# Указываем путь к карте сайта
+Sitemap: https://cs2skin.ru/sitemap.xml
+
+# Для Googlebot (оптимизация)
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Для Yandex (оптимизация)
+User-agent: Yandex
+Crawl-delay: 2
+
+# Для Bing
+User-agent: Bingbot
+Crawl-delay: 1
